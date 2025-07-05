@@ -1,28 +1,42 @@
-# Computer vision assistant for The Witness challenge
+# Computer Vision Assistant for The Witness Challenge
 
-This program solve in real time color puzzles(3-monitor) and triangle puzzles(maze) from the Witness challenge.
+This program solves, in real time, color puzzles (3-monitor) and triangle puzzles (maze) from The Witness challenge.
 
-#How to use
-I tried to write it as simple as possible, so there is no dependencies and libraries, just Java standard library classes.
-Program has two parameters: your screenshot folder, where Steam puts screenshots for Witness, and output folder, where you will see solved puzzles.
-When running, it checks every second for new screenshot, if found, tries to find puzzle on it and solve.
+# How to Use
 
-Build command:
+I tried to keep it as simple as possible, so there are no dependencies or external libraries—just standard Java library classes.
+
+The program takes two parameters: the folder where Steam saves screenshots for The Witness, and the output folder where solved puzzles will be saved.
+
+While running, it checks every second for a new screenshot. If one is found, it tries to detect and solve the puzzle.
+
+Build:
 ```
 javac Solver.java
 ```
 
-Run command:
+Run:
 ```
 java -Xss64m -cp . Solver "STEAM\\SCREENSHOT\\DIRECTORY\\" "OUTPUT\\DIRECTORY\\"
 ```
-**Use double backslashes in your paths**
+**Use double backslashes in your paths.**
 
-Program has infinity cycle inside, so just stop it manually, when you finish.
+The program runs in an infinite loop, so stop it manually when you're finished.
 
-When you make a screenshot, try to align your view directly to the puzzle, not view from top, let's puzzle form will be close to a square.
+When taking a screenshot, try to align your view directly with the puzzle. Avoid top-down views; the puzzle should appear roughly square.
 
-#How it works
-[Examples of solved puzzles](http://imgur.com/a/FEBQG)
+# How It Works
 
-For puzzle detection I used DFS and simple statistics calculations, for puzzle solving I used backtracking with DFS.
+For puzzle detection, I used DFS and basic statistical analysis. 
+For solving - backtracking with DFS.
+
+## Solved Puzzle Examples
+
+![Puzzle1](https://i.imgur.com/iniHrKR.png)
+![Puzzle2](https://i.imgur.com/lPZyUzU.png)
+![Puzzle3](https://i.imgur.com/E8XIJFv.png)
+![Puzzle4](https://i.imgur.com/Dwi616Y.png)
+![Puzzle5](https://i.imgur.com/Vxj1eH3.png)
+![Puzzle6](https://i.imgur.com/n4PK9he.png)
+
+[IMGUR](http://imgur.com/a/FEBQG)
